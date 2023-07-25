@@ -74,18 +74,6 @@ function guardarDatosEnLocalStorage() {
     }
 }
 
-document.getElementById('ingresarButton').addEventListener('click', function(event) {
-    event.preventDefault();
-    guardarDatosEnLocalStorage();
-});
-
-document.getElementById('ingresarButton').addEventListener('submit', function(event) {
-    event.preventDefault();
-    guardarDatosEnLocalStorage();
-    mostrarSaludoUsuario();
-    cerrarModal();
-});
-
 mostrarSaludoUsuario();
 
 document.getElementById('ingresarButton').addEventListener('click', function(event) {
@@ -97,7 +85,8 @@ document.getElementById('ingresarButton').addEventListener('click', function(eve
 
 document.getElementById('cerrarSesionButton').addEventListener('click', function(event) {
     event.preventDefault();
-    localStorage.removeItem('datosUsuario');
+    localStorage.removeItem('datosUsuario'); // Limpiar datos del LocalStorage
+    datosFormularioTemporal = null; // Limpiar datos temporales
     mostrarSaludoUsuario();
     cerrarModal();
 });
