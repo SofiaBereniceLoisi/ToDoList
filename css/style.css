@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------NAVBAR ---------------------------------------------------- */
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #FFF8EA;
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: #FFF8EA;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+
+.img-container img {
+    margin-left: 150px;
+    width: 7.7rem;
+    height: auto;
+    transition: 0.4s;
+}
+
+.img-container img:hover {
+    width: 8rem;
+    height: auto;
+}
+
+.login a i {
+    font-size: 14px;
+}
+
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    margin-top: 3px;
+    background-color: #FF4545;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.6s ease-out;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* MODO OSCURO ----------------------------------------------------------- */
+
+#container {
+    background-color: #FFFFFF;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    box-shadow: inset 4px 4px 6px #cecece,
+        inset -4px -4px 6px white;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    transform: scale(.7);
+    background-color: linear-gradient(145deg, #D8D8D8, #FFFFFF);
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px #c4c4c4,
+                -3px -3px 8px white;
+    transition: 0.5s;
+}
+
+.toggle i {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    transition: 0s ease;
+}
+
+
+#container.active .toggle {
+    left: 40px;
+}
+
+body.active {
+    background-color: #0c444e;
+    transition: 0.5s;
+    color: #FFF8EA;
+}
+
+body.active section h1{
+    border:#FFF8EA dotted 2px;
+}
+
+body.active .navbar {
+    background-color: #0c444e;
+    transition: 0.5s;
+}
+
+body.active .navbar .login a{
+    color: #FFF8EA;
+}
+
+
+
+/* -----MAIN ----------------------------------------------- */
+
+section h1{
+    text-align: center;
+
+    margin: 40px;
+    padding: 10px;
+    border: #333 2px dotted;
+}
+
+.cerrarSesionButton{
+    display: none;
+}
+
+.contenedor-formulario {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+.modal-login {
+    width: 450px;
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+    padding: 4rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-login::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, .15);
+    inset: 0;
+    transform: rotate(-5deg);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.modal-login a{
+    text-decoration: none;
+    transition: 0.5s;
+    color: black;
+}
+
+.contenedor-formulario a{
+    color: #C62727;
+}
+
+.contenedor-formulario a:hover{
+    font-weight: bold;
+    color: #C62727;
+}
+
+.login-header, .login-header h2{
+    margin-bottom: 1rem;
+}
+
+.login-header h2 + div{
+    font-size: calc(1rem * .8);
+    opacity: .8;
+}
+
+.login-contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-contenido .checkbox{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.login-contenido .login-item-otro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(1rem * .8)
+}
+
+.login-contenido input[type="text"],.login-contenido input[type="password"] {
+    border: none;
+    outline: none;
+    width: 250px;
+    background-color: rgba(255, 255, 255, .3);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 2.5);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+}
+
+.login-contenido input:focus{
+    background-color: #fff8eacd;
+}
+
+.login-contenido input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    accent-color: #c62727;
+}
+
+.login-contenido button{
+    border: none;
+    outline: none;
+    background-color: #C62727;
+    color: #FFF8EA;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0.6rem;
+    border-radius: 100px;
+    transition: background .5s;
+}
+
+.login-contenido button:hover{
+    cursor: pointer;
+}
+
+.login-footer{
+    padding-top: 2rem;
+}
+
+/* ----TODOLIST------------------------------------------- */
+
+
+/* ----Footer--------------------------------------------- */
+
+.redes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.redes li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.redes li a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 63px;
+    background: #333;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #FFF8EA;
+    transition: 0.5s;
+}
+
+.redes li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #C62727;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+.redes li a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #C62727;
+}
+
+.redes li a:hover {
+    color: #FF4545;
+    box-shadow: 0 0 5px #FF4545;
+    text-shadow: 0 0 5px #FF4545;
+}
+
+.rights p{
+    text-align: center;
+    padding: 20px;
+}
+
+
+/*  Media queryssss------------------------------*/
+
+@media screen and (max-width: 800px) {
+    .img-container img {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .img-container img {
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .img-container img {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .img-container img {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #container {
+        width: 60px;
+        height: 20px;
+    }
+
+    .toggle {
+        width: 20px;
+        height: 20px;
+    }
+
+    .toggle i {
+        display: none;
+    }
+
+    .img-container img {
+        margin-left: 0px;
+    }
+
+    .img-container img {
+        width: 5rem;
+    }
+
+    .link {
+        font-size: 0.7rem;
+    }
+
+    .login i {
+        font-size: 0.5rem;
+    }
+}

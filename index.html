@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List | Organizá tus tareas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/logosinfondo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/b0253b48a3.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="login">
+                <a href="" class="link" id="abrirModal">
+                    <i class='bx bxs-user'></i>
+                    <span id="saludoUsuario">INICIAR SESION</span>
+                </a>
+            </div>
+            <div class="img-container">
+                <img src="./img/logosinfondo.png" alt="">
+            </div>
+            <div>
+            </div>
+            <div id="container">
+                <div class="toggle"><i class='bx bxs-sun iconSun'></i></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- formulario de inicio de sesión ------------------------------------------------->
+        <section class="contenedor-formulario " id="modal-login">
+            <div class="modal-login">
+                <div class="login-header">
+                    <h2 id="iniciarSesion">Iniciar sesión</h2>
+                    <p id="pIniciarSesion">Por favor inicie sesión para continuar</p>
+                </div>
+                <form class="login-contenido" id="formulario-login">
+                    <div class="login-item">
+                        <input type="text" name="username" placeholder="Ingrese su nombre">
+
+                    </div>
+                    <div class="login-item">
+                        <input type="password"  name="password" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="login-item-otro">
+                        <div class="checkbox">
+                            <input type="checkbox" id="recordarmeCheckbox">
+                            <label for="recordarmeCheckbox" id="recordarme">Recordarme</label>
+                        </div>
+                        <a href="" id="olvideContraseña">Olvidé mi contraseña!</a>
+                    </div>
+                    <button type="submit" id="ingresarButton">INGRESAR</button>
+                    <button id="cerrarSesionButton" style="display: none;">CERRAR SESION</button>
+                    <button id="btnCerrar">CERRAR</button>
+                </form>
+                <div class="login-footer">
+                    <p id="crearCuenta">Todavía no tenes cuenta?<a href="">Creá una.</a></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1>To-Do List</h1>
+        </section>
+        <!-- <section class="to-do-list container">
+            <div class="perfil">
+
+            </div>
+            <div class="agregar-tarea">
+
+            </div>
+            <div class="seccion-tarea">
+
+            </div>
+        </section>
+
+        <section class="lists-container">
+            <div class="list-item">
+                <input type="text"  placeholder="Nueva tarea...">
+                <button id="addButton">Agregar</button>
+                <ul id="taskList"></ul>
+                <button id="clearCompleted">Limpiar</button>
+            </div>
+            <div class="list-item">
+                <input type="text" id="taskInput" placeholder="Nueva tarea...">
+                <button id="addButton">Agregar</button>
+                <ul id="taskList"></ul>
+                <button id="clearCompleted">Limpiar</button>
+            </div> -->
+
+        </section>
+    </main>
+    <footer>
+        <ul class="redes">
+            <li>
+                <a href="https://github.com/SofiaBereniceLoisi"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvkXlrQRmhCCWJDRMmKBJMwXFvdLPHQcVLrCTMkNlfFDnVjFjNwrFjpRRnFSXWVqHspWZg"><i
+                        class="fa-regular fa-envelope"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+        </ul>
+        <div class="rights">
+            <p>Todos los derechos reservados | By Sofía Loisi</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
