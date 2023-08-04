@@ -6,14 +6,28 @@
     padding: 0;
 }
 
-/* ----------NAVBAR ---------------------------------------------------- */
-
 body {
     font-family: 'Josefin Sans', sans-serif;
     background-color: #FFF8EA;
     transition: 0.5s;
     font-size: 20px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c62727;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a12020;
+}
+
+/* ----------NAVBAR ---------------------------------------------------- */
 
 .navbar {
     background-color: #FFF8EA;
@@ -94,7 +108,7 @@ body {
     background-color: linear-gradient(145deg, #D8D8D8, #FFFFFF);
     border-radius: 25px;
     box-shadow: 3px 3px 8px #c4c4c4,
-                -3px -3px 8px white;
+        -3px -3px 8px white;
     transition: 0.5s;
 }
 
@@ -104,7 +118,6 @@ body {
     left: 10px;
     transition: 0s ease;
 }
-
 
 #container.active .toggle {
     left: 40px;
@@ -116,8 +129,8 @@ body.active {
     color: #FFF8EA;
 }
 
-body.active section h1{
-    border:#FFF8EA dotted 2px;
+body.active section h1 {
+    border: #FFF8EA dotted 2px;
 }
 
 body.active .navbar {
@@ -125,7 +138,7 @@ body.active .navbar {
     transition: 0.5s;
 }
 
-body.active .navbar .login a{
+body.active .navbar .login a {
     color: #FFF8EA;
 }
 
@@ -133,7 +146,7 @@ body.active .navbar .login a{
 
 /* -----MAIN ----------------------------------------------- */
 
-section h1{
+section h1 {
     text-align: center;
 
     margin: 40px;
@@ -141,7 +154,7 @@ section h1{
     border: #333 2px dotted;
 }
 
-.cerrarSesionButton{
+.cerrarSesionButton {
     display: none;
 }
 
@@ -168,7 +181,7 @@ section h1{
     transform: translate(-50%, -50%);
 }
 
-.modal-login::before{
+.modal-login::before {
     content: '';
     position: absolute;
     background-color: rgba(255, 255, 255, .15);
@@ -178,50 +191,52 @@ section h1{
     z-index: -1;
 }
 
-.modal-login a{
+.modal-login a {
     text-decoration: none;
     transition: 0.5s;
     color: black;
 }
 
-.contenedor-formulario a{
+.contenedor-formulario a {
     color: #C62727;
 }
 
-.contenedor-formulario a:hover{
+.contenedor-formulario a:hover {
     font-weight: bold;
     color: #C62727;
 }
 
-.login-header, .login-header h2{
+.login-header,
+.login-header h2 {
     margin-bottom: 1rem;
 }
 
-.login-header h2 + div{
+.login-header h2+div {
     font-size: calc(1rem * .8);
     opacity: .8;
 }
 
-.login-contenido{
+.login-contenido {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.login-contenido .checkbox{
+.login-contenido .checkbox {
     display: flex;
     align-items: center;
     gap: 7px;
 }
 
-.login-contenido .login-item-otro{
+.login-contenido .login-item-otro {
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: calc(1rem * .8)
 }
 
-.login-contenido input[type="text"],.login-contenido input[type="password"] {
+.login-contenido input[type="text"],
+.login-contenido input[type="password"] {
     border: none;
     outline: none;
     width: 250px;
@@ -233,17 +248,17 @@ section h1{
     transition: background .5s;
 }
 
-.login-contenido input:focus{
+.login-contenido input:focus {
     background-color: #fff8eacd;
 }
 
-.login-contenido input[type="checkbox"]{
+.login-contenido input[type="checkbox"] {
     width: 16px;
     height: 16px;
     accent-color: #c62727;
 }
 
-.login-contenido button{
+.login-contenido button {
     border: none;
     outline: none;
     background-color: #C62727;
@@ -255,16 +270,109 @@ section h1{
     transition: background .5s;
 }
 
-.login-contenido button:hover{
+.login-contenido button:hover {
     cursor: pointer;
 }
 
-.login-footer{
+.login-footer {
     padding-top: 2rem;
 }
 
 /* ----TODOLIST------------------------------------------- */
 
+.list-container {
+    width: 400px;
+    max-width: 80%;
+    height: 600px;
+    margin: auto;
+}
+
+.perfil p {
+    margin: 10px 0px;
+}
+
+.agregar-tarea {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 70px;
+    margin: 20px 0px;
+}
+
+.agregar-tarea input {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFFFFF;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.agregar-tarea input::placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #C62727;
+}
+
+.agregar-tarea input:focus {
+    outline: none;
+    caret-color: #C62727;
+}
+
+.agregar-tarea i {
+    font-size: 30px;
+    color: #C62727;
+    transition: 0.2s;
+}
+
+.agregar-tarea i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.seccion-tarea h3 {
+    margin: 40px 0 17px 0;
+    font-size: 20px;
+}
+
+.seccion-tarea li {
+    display: flex;
+    border-radius: 15px;
+    padding: 10px 15px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 7px 0;
+}
+
+.seccion-tarea i {
+    font-size: 25px;
+    color: black
+}
+
+.seccion-tarea i:hover {
+    color: #C62727;
+    cursor: pointer;
+}
+
+
+.seccion-tarea>ul p {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.tachado{
+    text-decoration: line-through;
+    color: grey;    
+}
+
+.t-tarea{
+    font-size: 1rem;
+}
 
 /* ----Footer--------------------------------------------- */
 
@@ -320,7 +428,7 @@ section h1{
     text-shadow: 0 0 5px #FF4545;
 }
 
-.rights p{
+.rights p {
     text-align: center;
     padding: 20px;
 }

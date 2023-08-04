@@ -141,3 +141,56 @@ function mostrarSaludoUsuario() {
     }
 }
 
+// -----------------------TO DO LIST --------------------------
+
+const fecha = document.querySelector('#fecha');
+const lista = document.querySelector('#listaTareas');
+const input = document.querySelector('#input');
+const botonEnter = document.querySelector('#agregar');
+
+
+// agregar tarea al apretar +
+function agregarTarea (tarea){
+    const plantilla = ` <li id="elemento">
+                        <i class="fa-regular fa-circle" data="realizado" id="circulo"></i>
+                        <p class="texto-tarea">${tarea}</p>
+                        <i class="fas fa-trash de" data="eliminado" id="tachito"></i>
+                        </li>`;
+    lista.insertAdjacentHTML("beforeend", plantilla)
+}
+
+botonEnter.addEventListener('click', () => {
+    const tarea = input.value
+    if (tarea){
+        agregarTarea(tarea);
+    }else{
+        Toastify({
+            text: "No agregaste ninguna tarea",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            close: true,
+            className: "t-tarea",
+            style: {
+                background: "#FF4545",
+            },
+        }).showToast();
+    }
+
+    input.value = '';
+
+});
+
+// agregar tarea si hago enter con el teclado
+document.addEventListener('keyup', function(event){
+    if (event.key == 'Enter'){
+        const tarea = input.value
+        if (tarea){
+            agregarTarea(tarea);
+        }
+    
+        input.value = '';
+    
+    }
+})
