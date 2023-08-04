@@ -365,7 +365,7 @@ section h1 {
     color: black;
 }
 
-.tachado{
+#listaTareas .tachado{
     text-decoration: line-through;
     color: grey;    
 }

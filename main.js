@@ -143,26 +143,40 @@ function mostrarSaludoUsuario() {
 
 // -----------------------TO DO LIST --------------------------
 
+
+// lista de variables:
 const fecha = document.querySelector('#fecha');
 const lista = document.querySelector('#listaTareas');
 const input = document.querySelector('#input');
 const botonEnter = document.querySelector('#agregar');
-
+const check = 'fa-check-circle';
+const uncheck = 'fa-circle';
+const tachado = 'tachado';
+let id = 0;
 
 // agregar tarea al apretar +
-function agregarTarea (tarea){
+function agregarTarea (tarea, id, realizado, eliminado){
+
+    if(eliminado){
+        return
+    }
+
+    const tildado = realizado ? check : uncheck;
+    const line = realizado ? tachado : '';
+
     const plantilla = ` <li id="elemento">
-                        <i class="fa-regular fa-circle" data="realizado" id="circulo"></i>
-                        <p class="texto-tarea">${tarea}</p>
-                        <i class="fas fa-trash de" data="eliminado" id="tachito"></i>
+                        <i class="fa-regular ${tildado}" data="realizado" id="${id}"></i>
+                        <p class="texto-tarea ${line}">${tarea}</p>
+                        <i class="fas fa-trash de" data="eliminado" id="${id}"></i>
                         </li>`;
     lista.insertAdjacentHTML("beforeend", plantilla)
 }
 
+// cuando hago click se agrega la tarea, sino salta un toastify de que no se agregó una tarea.
 botonEnter.addEventListener('click', () => {
     const tarea = input.value
     if (tarea){
-        agregarTarea(tarea);
+        agregarTarea(tarea, id, false, false);
     }else{
         Toastify({
             text: "No agregaste ninguna tarea",
@@ -179,7 +193,7 @@ botonEnter.addEventListener('click', () => {
     }
 
     input.value = '';
-
+    id +=1;
 });
 
 // agregar tarea si hago enter con el teclado
@@ -187,10 +201,43 @@ document.addEventListener('keyup', function(event){
     if (event.key == 'Enter'){
         const tarea = input.value
         if (tarea){
-            agregarTarea(tarea);
+            agregarTarea(tarea, id, false, false);
+        }else if (document.activeElement === input) {
+            Toastify({
+                text: "No agregaste ninguna tarea",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                close: true,
+                className: "t-tarea",
+                style: {
+                background: "#FF4545",
+                },
+            }).showToast();
         }
-    
+        
         input.value = '';
-    
+        id +=1;
     }
+})
+
+// funcion de tilde para cuando se realiza una tarea
+function tareaRealizada(element){
+    element.classList.toggle(check);
+    element.classList.toggle(uncheck);
+    element.parentNode.querySelector('.texto-tarea').classList.toggle(tachado)
+}
+
+// agregarle funcionalidad a los íconos de check y el tachito
+lista.addEventListener('click', function(event){
+    const element = event.target;
+    const elementData = element.attributes.data.value;
+
+    if(elementData === 'realizado'){
+        tareaRealizada(element);
+    }else if(elementData === 'eliminado'){
+        tareaEliminada(element);
+    }
+
 })
