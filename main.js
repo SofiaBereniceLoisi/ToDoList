@@ -246,6 +246,18 @@ document.addEventListener('keyup', function(event){
 function tareaEliminada(element){
     element.parentNode.parentNode.removeChild(element.parentNode);
     list[element.id].eliminado = true;
+    Toastify({
+        text: "Tarea eliminada",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        close: true,
+        className: "t-tarea",
+        style: {
+            background: "#FF4545",
+        },
+    }).showToast();
 }
 
 // funcion de tilde para cuando se realiza una tarea
