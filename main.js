@@ -152,7 +152,15 @@ const botonEnter = document.querySelector('#agregar');
 const check = 'fa-check-circle';
 const uncheck = 'fa-circle';
 const tachado = 'tachado';
-let id = 0;
+let id ;
+let list ;
+
+// funcion de la fecha:
+
+const date = new Date();
+fecha.innerHTML = date.toLocaleDateString('es-AR', {weekday: "long", year: "numeric", month: "long", day: "numeric"}).toUpperCase();
+
+
 
 // agregar tarea al apretar +
 function agregarTarea (tarea, id, realizado, eliminado){
@@ -177,6 +185,12 @@ botonEnter.addEventListener('click', () => {
     const tarea = input.value
     if (tarea){
         agregarTarea(tarea, id, false, false);
+        list.push({
+            nombre : tarea,
+            id : id,
+            realizado : false,
+            eliminado : false,
+        })
     }else{
         Toastify({
             text: "No agregaste ninguna tarea",
@@ -191,7 +205,7 @@ botonEnter.addEventListener('click', () => {
             },
         }).showToast();
     }
-
+    localStorage.setItem('toDo', JSON.stringify(list));
     input.value = '';
     id +=1;
 });
@@ -202,6 +216,12 @@ document.addEventListener('keyup', function(event){
         const tarea = input.value
         if (tarea){
             agregarTarea(tarea, id, false, false);
+            list.push({
+                nombre : tarea,
+                id : id,
+                realizado : false,
+                eliminado : false,
+            })
         }else if (document.activeElement === input) {
             Toastify({
                 text: "No agregaste ninguna tarea",
@@ -216,17 +236,24 @@ document.addEventListener('keyup', function(event){
                 },
             }).showToast();
         }
-        
+        localStorage.setItem('toDo', JSON.stringify(list));
         input.value = '';
         id +=1;
     }
 })
 
+// funcion de eliminar el bloque de la tarea agregada
+function tareaEliminada(element){
+    element.parentNode.parentNode.removeChild(element.parentNode);
+    list[element.id].eliminado = true;
+}
+
 // funcion de tilde para cuando se realiza una tarea
 function tareaRealizada(element){
     element.classList.toggle(check);
     element.classList.toggle(uncheck);
-    element.parentNode.querySelector('.texto-tarea').classList.toggle(tachado)
+    element.parentNode.querySelector('.texto-tarea').classList.toggle(tachado);
+    list[element.id].realizado = list[element.id].realizado ? false : true;
 }
 
 // agregarle funcionalidad a los íconos de check y el tachito
@@ -239,5 +266,22 @@ lista.addEventListener('click', function(event){
     }else if(elementData === 'eliminado'){
         tareaEliminada(element);
     }
-
+    localStorage.setItem('toDo', JSON.stringify(list));
 })
+
+
+let data = localStorage.getItem('toDo');
+if (data){
+    list = JSON.parse(data);
+    id = list.length;
+    cargarLista(list);
+}else{
+    list = [];
+    id = 0;
+}
+
+function cargarLista(data){
+    data.forEach(function(i){
+        agregarTarea(i.nombre, i.id, i.realizado, i.eliminado);
+    })
+}
