@@ -111,7 +111,7 @@ class crearUsuario {
 // función para obtener los datos existentes tanto en localStorage como en el archivo usuarios.json-----------
 
 async function getUsuarios() {
-    const respuesta = await fetch('./data/usuarios.json');
+    const respuesta = await fetch('https://raw.githubusercontent.com/SofiaBereniceLoisi/ToDoList/main/data/usuarios.json');
     const infoUsuario = await respuesta.json() || [];
     const infoUsuarioLS = await JSON.parse(localStorage.getItem('usuarios')) || [];
     return infoUsuarioLS.length > 0 ? infoUsuarioLS : infoUsuario;
