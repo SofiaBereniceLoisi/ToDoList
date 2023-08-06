@@ -154,24 +154,24 @@ section h1 {
     border: #333 2px dotted;
 }
 
-.cerrarSesionButton {
+/* .cerrarSesionButton {
     display: none;
-}
+} */
 
 .contenedor-formulario {
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9999;
+    /* z-index: 9999; */
 }
 
-.modal-login {
+.login {
     width: 450px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: #fff8eabc;
     color: black;
     padding: 4rem;
     border-radius: 10px;
@@ -181,7 +181,7 @@ section h1 {
     transform: translate(-50%, -50%);
 }
 
-.modal-login::before {
+.login::before {
     content: '';
     position: absolute;
     background-color: rgba(255, 255, 255, .15);
@@ -191,7 +191,7 @@ section h1 {
     z-index: -1;
 }
 
-.modal-login a {
+.login a {
     text-decoration: none;
     transition: 0.5s;
     color: black;
@@ -236,7 +236,7 @@ section h1 {
 }
 
 .login-contenido input[type="text"],
-.login-contenido input[type="password"] {
+.login-contenido input[type="password"], .login-contenido input[type="email"] {
     border: none;
     outline: none;
     width: 250px;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link css -------------------------------- -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- link del icono de la pestaña ----------------->
+    <link rel="shortcut icon" href="../img/logosinfondo.png" type="image/x-icon">
+    <!-- link de boxicons --------------------------------->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link toastify ------------------------------->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- script de js ---------------------------->
+    <script src="../main.js" defer></script>
+    <title>Bienvenido! | Registrate | Todavía no tenes una cuenta?  </title>
+</head>
+<body>
+    <!-- registro-------------------------------------------------------- -->
+    <section class="contenedor-formulario registro">
+        <div class="login">
+            <div class="login-header">
+                <h2 id="iniciarSesion">Registrate</h2>
+                <p id="pIniciarSesion">Por favor regístrese si todavia no tiene una cuenta</p>
+            </div>
+            <form class="login-contenido" id="formularioRegistro">
+                <div class="login-item">
+                    <input type="text" name="username" placeholder="Ingrese su nombre" id="regUsuario">
+                </div>
+                <div class="login-item">
+                    <input type="email" name="mail" placeholder="Ingrese su mail" id="regEmail">
+                </div>
+                <div class="login-item">
+                    <input type="password"  name="password" placeholder="Ingrese su contraseña" id="regPassword">
+                </div>
+                
+                <button type="submit" id="btnRegistrar">REGISTRARME</button>
+                <button id="btnVolver" href="../index.html">VOLVER</button>
+            </form>
+
+        </div>
+    </section>
+    <!-------- Scripts ---------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/b0253b48a3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
