@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnVolver) {
         btnVolver.addEventListener('click', (event) => {
             event.preventDefault();
-            location.href = '/index.html';
+            location.href = '../index.html';
         });
     }
 });
@@ -66,7 +66,7 @@ function mostrarMensajeUsuarioExistente(){
         confirmButtonText: 'IR A INICIAR SESION'
     }).then((result) => {
         if (result.isConfirmed) {
-            location.href = '/index.html';
+            location.href = '../index.html';
         }
     })
 }
