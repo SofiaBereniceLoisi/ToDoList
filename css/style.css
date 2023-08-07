@@ -112,12 +112,12 @@ body {
     transition: 0.5s;
 }
 
-.toggle i {
+/* .toggle i {
     position: relative;
     top: 10px;
     left: 10px;
     transition: 0s ease;
-}
+} */
 
 #container.active .toggle {
     left: 40px;
@@ -138,7 +138,7 @@ body.active .navbar {
     transition: 0.5s;
 }
 
-body.active .navbar .login a {
+body.active .navbar .holaUsuario a {
     color: #FFF8EA;
 }
 
