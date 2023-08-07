@@ -184,6 +184,7 @@ async function iniciarSesion(event) {
         if (usuarioEncontrado.password === contraUsuario) {
             // Si la contraseña es correcta, mostrar mensaje de bienvenida
             mostrarMensajeBienvenido(nombreUsuario);
+            localStorage.setItem('usuarioLogeado', nombreUsuario);
         } else {
             // Si la contraseña es incorrecta, mostrar mensaje de datos incorrectos
             mostrarMensajeDatosIncorrectos();

@@ -1,9 +1,7 @@
 // -------Saludo a usuario----------------
 
 function mostrarSaludoUsuario() {
-    const listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const nombreUsuario = listaUsuarios.length > 0 ? listaUsuarios[listaUsuarios.length - 1].username : '';
-
+    const nombreUsuario = localStorage.getItem('usuarioLogeado');
     const saludoUsuario = document.querySelector('#saludoUsuario');
     saludoUsuario.innerText = `Hola, ${nombreUsuario}!`;
 }
