@@ -12,6 +12,63 @@ function mostrarSaludoUsuario() {
 
 document.addEventListener('DOMContentLoaded', mostrarSaludoUsuario);
 
+//-------Modal de perfil del usuario ---------------------------
+
+const linkModal = document.querySelector('#abrirModal');
+const modal = document.querySelector('#modal-perfil');
+const btnCerrar = document.querySelector('#btnCerrar');
+const btnCerrarSesion = document.querySelector('#btnCerrarSesion');
+
+function abrirModal() {
+    modal.style.display = 'flex';
+}
+
+function cerrarModal() {
+    modal.style.display = 'none';
+}
+
+function cerrarSesion(){
+    location.href = '/index.html';
+}
+
+linkModal.addEventListener('click', function(event){
+    event.preventDefault(); 
+    mostrarPerfilUsuario();
+    abrirModal();
+});
+
+btnCerrar.addEventListener('click', function() {
+    cerrarModal();
+});
+
+//Ocultar el modal cuando se hace clic fuera de el
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        cerrarModal();
+    }
+});
+
+btnCerrarSesion.addEventListener('click', cerrarSesion);
+
+// mostrar los datos del usuario que ingresó en el modal:
+
+function mostrarPerfilUsuario() {
+    const listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuarioLogeado = localStorage.getItem('usuarioLogeado');
+
+    const usuario = listaUsuarios.find((usuario) => usuario.username === usuarioLogeado);
+
+    if (usuario) {
+        const nombre = document.getElementById('nombre');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        nombre.innerText = 'Nombre: ' + usuario.username;
+        email.innerText = 'Email: ' + usuario.mail;
+        password.innerText = 'Contraseña: ' + usuario.password;
+    }
+}
+
 
 // -------Boton modo oscuro -------------------
 
@@ -42,10 +99,7 @@ function aplicarTemaAlCargar() {
 
 aplicarTemaAlCargar();
 
-
-
 // -----------------------TO DO LIST --------------------------
-
 
 // lista de variables:
 const fecha = document.querySelector('#fecha');
