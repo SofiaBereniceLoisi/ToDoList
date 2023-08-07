@@ -3,7 +3,11 @@
 function mostrarSaludoUsuario() {
     const nombreUsuario = localStorage.getItem('usuarioLogeado');
     const saludoUsuario = document.querySelector('#saludoUsuario');
-    saludoUsuario.innerText = `Hola, ${nombreUsuario}!`;
+    if (nombreUsuario){
+        saludoUsuario.innerText = `Hola, ${nombreUsuario}!`;
+    }else{
+        saludoUsuario.innerText = `Hola!`;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', mostrarSaludoUsuario);
