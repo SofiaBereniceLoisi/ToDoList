@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// funciones de mensajes sweet alert -----------------------------------------
+
 function mostrarMensajeSinDatos(mensaje) {
     mensaje = Swal.fire({
         icon: 'error',
@@ -89,8 +91,8 @@ function mostrarMensajeBienvenido(nombreUsuario) {
     Swal.fire({
         icon: 'success',
         title: 'Bienvenido!',
-        text: 'Ahora vas a poder utilizar la lista de tareas. Que la disfrutes, ' + nombreUsuario + '.',
-        confirmButtonColor: '#C62727',
+        text: `Ahora vas a poder utilizar la lista de tareas. Que la disfrutes, ${nombreUsuario}`,
+        confirmButtonColor: '#C62727', 
         confirmButtonText: 'Gracias!'
     }).then((result) => {
         if (result.isConfirmed) {
@@ -162,7 +164,6 @@ async function registrarse(event) {
 
 // función para iniciar sesión------------------------------------------------------------------------------------
 
-
 async function iniciarSesion(event) {
     event.preventDefault();
 
@@ -192,3 +193,4 @@ async function iniciarSesion(event) {
         mostrarMensajeDatosInexistentes();
     }
 }
+

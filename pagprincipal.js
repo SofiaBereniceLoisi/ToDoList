@@ -1,3 +1,16 @@
+// -------Saludo a usuario----------------
+
+function mostrarSaludoUsuario() {
+    const listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const nombreUsuario = listaUsuarios.length > 0 ? listaUsuarios[listaUsuarios.length - 1].username : '';
+
+    const saludoUsuario = document.querySelector('#saludoUsuario');
+    saludoUsuario.innerText = `Hola, ${nombreUsuario}!`;
+}
+
+document.addEventListener('DOMContentLoaded', mostrarSaludoUsuario);
+
+
 // -------Boton modo oscuro -------------------
 
 function cambiarTema() {
@@ -133,7 +146,7 @@ document.addEventListener('keyup', function(event){
 // funcion de eliminar el bloque de la tarea agregada
 function tareaEliminada(element){
     element.parentNode.parentNode.removeChild(element.parentNode);
-    list[element.id].eliminado = true; //linea 136
+    list[element.id].eliminado = true; 
     Toastify({
         text: "Tarea eliminada",
         duration: 3000,
