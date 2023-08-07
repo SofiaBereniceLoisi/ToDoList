@@ -28,7 +28,7 @@ function cerrarModal() {
 }
 
 function cerrarSesion(){
-    location.href = '/index.html';
+    location.href = '../index.html';
 }
 
 linkModal.addEventListener('click', function(event){
