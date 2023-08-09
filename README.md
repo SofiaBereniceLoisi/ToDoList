@@ -3,7 +3,7 @@ Aplicación web de lista de tareas.
 
 # 💫 About Me:
 Hi there! I'm Sofía.
-I'm from Buenos Aires, Argentina. I really enjoy practising daily to improve my skills and to continue growing professionally.<br> <br>🔭 I’m currently working on my Web Development . <br>👯 I’m looking to collaborate on JavaScript projects.<br>🌱 I’m currently learning JavaScript and React.Js.<br><br>My goal is to be a full stack developer 
+I'm from Buenos Aires, Argentina. I really enjoy practising daily to improve my skills and to continue growing professionally.<br> <br>🔭 I’m currently working on Web Development . <br>👯 I’m looking to collaborate on JavaScript projects.<br>🌱 I’m currently learning JavaScript and React.Js.<br><br>My goal is to be a full stack developer 
 
 
 # 💻 Tech Stack:
