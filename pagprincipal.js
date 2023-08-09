@@ -27,8 +27,36 @@ function cerrarModal() {
     modal.style.display = 'none';
 }
 
+
+function mostrarMensajeCerrarSesion(){
+    Swal.fire({
+        icon: 'question',
+        iconColor:'#c62727cc',
+        title: 'Cerrar Sesion',
+        text: '¿Está seguro que desea cerrar sesión?',
+        showCancelButton: true,
+        confirmButtonColor: '#C62727',
+        cancelButtonColor: '#C62727',
+        confirmButtonText: 'SI',
+        cancelButtonText: 'NO',
+
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+            cancelButton:'botonSwal',
+        }
+
+    }).then((result) => {
+        if (result.isConfirmed) {
+            location.href = '../index.html';
+        }else if(result.isDenied){
+            location.href = './pages/pagprincipal.html';
+        }
+    })
+}
+
 function cerrarSesion(){
-    location.href = '../index.html';
+    mostrarMensajeCerrarSesion();
 }
 
 linkModal.addEventListener('click', function(event){
@@ -68,6 +96,8 @@ function mostrarPerfilUsuario() {
         password.innerText = 'Contraseña: ' + usuario.password;
     }
 }
+
+
 
 
 // -------Boton modo oscuro -------------------

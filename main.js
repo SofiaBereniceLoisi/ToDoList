@@ -26,32 +26,45 @@ document.addEventListener('DOMContentLoaded', function() {
 function mostrarMensajeSinDatos(mensaje) {
     mensaje = Swal.fire({
         icon: 'error',
+        iconColor:'#c62727cc',
         title: 'No se ingresaron datos',
         text: "Por favor ingrese los datos solicitados para continuar",
         confirmButtonColor: '#C62727',
-        confirmButtonText: 'VOLVER A INTENTAR'
+        confirmButtonText: 'VOLVER A INTENTAR',
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+        }
     });
 }
 
 function mostrarMensajeDatosIncorrectos(mensaje) {
     mensaje = Swal.fire({
         icon: 'error',
+        iconColor:'#c62727cc',
         title: 'Datos incorrectos',
         text: "La contraseña es incorrecta.",
         confirmButtonColor: '#C62727',
         confirmButtonText: 'VOLVER A INTENTAR',
-        
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+        }
     });
 }
 
 function mostrarMensajeDatosInexistentes(mensaje) {
     mensaje = Swal.fire({
         icon: 'error',
+        iconColor:'#c62727cc',
         title: 'Error',
         text: "El usuario no existe, por favor regístrese.",
-
         confirmButtonColor: '#C62727',
-        confirmButtonText: 'REGISTRARME'
+        confirmButtonText: 'REGISTRARME',
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = './pages/registro.html';
@@ -62,10 +75,15 @@ function mostrarMensajeDatosInexistentes(mensaje) {
 function mostrarMensajeUsuarioExistente(){
     Swal.fire({
         icon: 'warning',
+        iconColor:'#c62727cc',
         title: 'Usuario existente',
         text: 'El nombre de usuario ya está registrado.',
         confirmButtonColor: '#C62727',
-        confirmButtonText: 'IR A INICIAR SESION'
+        confirmButtonText: 'IR A INICIAR SESION',
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             location.href = '../index.html';
@@ -83,6 +101,7 @@ function mostrarMensajeRegistroCompleto(){
     })
     Toast.fire({
         icon: 'success',
+        iconColor:'#c62727cc',
         title: 'Registro exitoso!'
     })
 }
@@ -90,10 +109,15 @@ function mostrarMensajeRegistroCompleto(){
 function mostrarMensajeBienvenido(nombreUsuario) {
     Swal.fire({
         icon: 'success',
+        iconColor:'#c62727cc',
         title: 'Bienvenido!',
         text: `Ahora vas a poder utilizar la lista de tareas. Que la disfrutes, ${nombreUsuario}`,
         confirmButtonColor: '#C62727', 
-        confirmButtonText: 'Gracias!'
+        confirmButtonText: 'Gracias!',
+        customClass:{
+            popup:'swalContainer',
+            confirmButton:'botonSwal',
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             location.href = './pages/pagprincipal.html';
