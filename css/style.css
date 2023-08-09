@@ -360,6 +360,7 @@ section h1 {
 
 main{
     height: auto;
+    min-height: 45rem;
 }
 
 .list-container {
