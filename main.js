@@ -111,7 +111,7 @@ function mostrarMensajeBienvenido(nombreUsuario) {
         icon: 'success',
         iconColor:'#c62727cc',
         title: 'Bienvenido!',
-        text: `Ahora vas a poder utilizar la lista de tareas. Que la disfrutes, ${nombreUsuario}`,
+        text: `Ahora vas a poder utilizar la lista de tareas. Que la disfrutes, ${nombreUsuario}.`,
         confirmButtonColor: '#C62727', 
         confirmButtonText: 'Gracias!',
         customClass:{
