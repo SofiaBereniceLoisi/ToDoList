@@ -358,11 +358,16 @@ section h1 {
 
 /* ----TODOLIST------------------------------------------- */
 
+main{
+    height: auto;
+}
+
 .list-container {
     width: 400px;
     max-width: 80%;
-    height: 600px;
+    height: auto;
     margin: auto;
+    padding-bottom: 10%;
 }
 
 .perfil p {
@@ -454,12 +459,16 @@ section h1 {
 
 /* ----Footer--------------------------------------------- */
 
+footer{
+    margin-bottom: 3%;
+}
+
 .redes {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: auto;
 }
 
 .redes li {
